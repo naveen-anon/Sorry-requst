@@ -1,42 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorry Baby 💔</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>I Am Sorry ❤️</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    text-align:center;
+    color:white;
+}
+
+.container{
+    margin-top:120px;
+}
+
+h1{
+    font-size:50px;
+}
+
+p{
+    font-size:22px;
+    width:70%;
+    margin:auto;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.heart{
+    position:fixed;
+    color:red;
+    font-size:20px;
+    animation:float 5s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh)}
+    100%{transform:translateY(-10vh)}
+}
+</style>
+
 </head>
+
 <body>
 
-  <!-- Background Music -->
-  <audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_54c2a35e68.mp3" type="audio/mpeg">
-  </audio>
+<div class="container">
 
-  <!-- Floating Hearts -->
-  <div class="hearts"></div>
+<h1>I'm Really Sorry ❤️</h1>
 
-  <!-- Crying Emojis -->
-  <div class="cry"></div>
+<p>
+Mujhse galti ho gayi...  
+Par sach bolu to tum meri life ki sabse important person ho.  
+Main tumhe hurt karna kabhi nahi chahta tha.  
+Please mujhe ek chance aur de do.  
+I promise main better banunga. ❤️
+</p>
 
-  <div class="container">
-    <div class="big-heart">❤️</div>
+<button onclick="forgive()">Please Forgive Me 🥺</button>
 
-    <h1>Sorry Baby 😩</h1>
+</div>
 
-    <p id="typingText" class="message"></p>
+<script>
 
-    <button id="sorryBtn">Maan jao na baby 🐥</button>
+function forgive(){
+alert("Yay! Thank you for forgiving me ❤️");
+}
 
-    <a id="whatsappBtn" target="_blank">
-      💌 WhatsApp pe bhejo
-    </a>
+function createHeart(){
+let heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=Math.random()*20+10+"px";
+heart.style.animationDuration=Math.random()*3+2+"s";
 
-    <p id="finalMsg" class="hidden">
-      💖 Tum meri zindagi ho… tumhare bina sab adhoora hai 💖
-    </p>
-  </div>
+document.body.appendChild(heart);
 
-  <script src="script.js"></script>
+setTimeout(()=>{
+heart.remove();
+},5000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
 </body>
-      </html>
+</html>
